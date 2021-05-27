@@ -1,21 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import "react-native-gesture-handler";
+import React, { useCallback, useMemo, useState } from "react";
+import { themes, ThemeContext, TMode, ITheme } from "./src/config/Theme";
+import { NavigationContainer } from "@react-navigation/native";
+import RootStack from "./src/navigation/RootStack";
+import { useFonts } from "expo-font";
 export default function App() {
+  const [mode, setMode] = useState<TMode>("dark");
+  const [loaded] = useFonts({
+    Regular: require("./assets/fonts/SF-Pro-Display-Regular.otf"),
+    Bold: require("./assets/fonts/SF-Pro-Display-Bold.otf"),
+    Heavy: require("./assets/fonts/SF-Pro-Display-Heavy.otf"),
+    Light: require("./assets/fonts/SF-Pro-Display-Light.otf"),
+    Medium: require("./assets/fonts/SF-Pro-Display-Medium.otf"),
+    Semibold: require("./assets/fonts/SF-Pro-Display-Semibold.otf"),
+  });
+
+  const theme: ITheme = useMemo(
+    () => (mode === "dark" ? themes.dark : themes.light),
+    [mode]
+  );
+  const toggleTheme = useCallback(() => {
+    setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+  }, []);
+
+  if (!loaded) {
+    return null;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeContext.Provider value={{ toggleTheme, theme }}>
+      <NavigationContainer>
+        <RootStack />
+      </NavigationContainer>
+    </ThemeContext.Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
