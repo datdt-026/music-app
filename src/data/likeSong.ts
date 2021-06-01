@@ -9,11 +9,11 @@ export interface ISong {
 const likeSong: ISong[] = [
   {
     id: "0",
-    name: "name 0",
-    author: "author 0",
+    name: "Slide",
+    author: "Calvin Harris ft. Frank Ocean, Migos",
     uri: "https://drive.google.com/uc?export=download&id=1Zpsqmvfb2jkPYdwz_Noe7-qINNNqmE0f",
     source:
-      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/011db4aa-c8de-4ad4-9acd-67968038944d/d8fdw6g-43479644-fb68-4870-847b-f098615d5b1a.png/v1/fill/w_745,h_1053,strp/doge__vector_edition__by_originalczechball_d8fdw6g-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA1MyIsInBhdGgiOiJcL2ZcLzAxMWRiNGFhLWM4ZGUtNGFkNC05YWNkLTY3OTY4MDM4OTQ0ZFwvZDhmZHc2Zy00MzQ3OTY0NC1mYjY4LTQ4NzAtODQ3Yi1mMDk4NjE1ZDViMWEucG5nIiwid2lkdGgiOiI8PTc0NSJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.6BIObkuU65OzmFo7Mm80vyBxM36OOiWc6Wn7w-nhWM4",
+      "https://images-na.ssl-images-amazon.com/images/I/81nldVd81bL._SL1432_.jpg",
   },
   {
     id: "1",

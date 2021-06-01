@@ -81,6 +81,6 @@ const styles = StyleSheet.create({
   },
   txtAuthor: {
     alignSelf: "center",
-    fontSize: Size["h5"].value,
+    fontSize: Size["h3"].value,
   },
 });
